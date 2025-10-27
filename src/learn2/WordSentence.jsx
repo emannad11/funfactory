@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./WordSentence.css";
 
-// ✅ Import all images
+
 import CatImg from "../assets/Cat3.jpg";
 import DogImg from "../assets/Dog2.jpg";
 import BallImg from "../assets/redball.webp";
