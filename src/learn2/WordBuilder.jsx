@@ -1,29 +1,44 @@
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./WordBuilder.css";
 
-const correctSound = new Audio("/src/assets/sounds/correct.mp3");
-const wrongSound = new Audio("/src/assets/sounds/no.mp3");
+// ✅ Import all images
+import CatImg from "../assets/Cat2.jpg";
+import DogImg from "../assets/Dog3.webp";
+import SunImg from "../assets/sunn.png";
+import HenImg from "../assets/hen5.jpg";
+import BeeImg from "../assets/beee.jpeg";
+import CarImg from "../assets/car.jpg";
+import BoxImg from "../assets/box.jpg";
+import HatImg from "../assets/hat.jpg";
+import BagImg from "../assets/bag.webp";
+import FoxImg from "../assets/fox.jpg";
+import JarImg from "../assets/jar.avif";
+import PenImg from "../assets/pen.webp";
+
+// ✅ Import sounds
+import CorrectSound from "../assets/sounds/correct.mp3";
+import WrongSound from "../assets/sounds/no.mp3";
 
 export default function WordBuilder() {
-  const navigate = useNavigate();
-
   const words = [
-    { word: "CAT", options: ["C", "B", "T", "A", "D"], img: "/src/assets/Cat2.jpg" },
-    { word: "DOG", options: ["D", "I", "G", "H", "O"], img: "/src/assets/Dog3.webp" },
-    { word: "SUN", options: ["S", "M", "N", "U", "P"], img: "/src/assets/sunn.png" },
-    { word: "HEN", options: ["H", "N", "E", "L", "K"], img: "/src/assets/hen5.jpg" },
-    { word: "BEE", options: ["E", "E", "B", "C", "D"], img: "/src/assets/beee.jpeg" },
-    { word: "CAR", options: ["C", "A", "B", "D", "R"], img: "/src/assets/car.jpg" },
-    { word: "BOX", options: ["B", "O", "X", "C", "D"], img: "/src/assets/box.jpg" },
-    { word: "HAT", options: ["H", "C", "T", "A", "I"], img: "/src/assets/hat.jpg" },
-    { word: "BAG", options: ["B", "A", "G", "C", "D"], img: "/src/assets/bag.webp" },
-    { word: "FOX", options: ["F", "J", "X", "O", "H"], img: "/src/assets/fox.jpg" },
-    { word: "JAR", options: ["J", "A", "R", "K", "L"], img: "/src/assets/jar.avif" },
-    { word: "PEN", options: ["P", "E", "N", "C", "D"], img: "/src/assets/pen.webp" },
+    { word: "CAT", options: ["C", "B", "T", "A", "D"], img: CatImg },
+    { word: "DOG", options: ["D", "I", "G", "H", "O"], img: DogImg },
+    { word: "SUN", options: ["S", "M", "N", "U", "P"], img: SunImg },
+    { word: "HEN", options: ["H", "N", "E", "L", "K"], img: HenImg },
+    { word: "BEE", options: ["E", "E", "B", "C", "D"], img: BeeImg },
+    { word: "CAR", options: ["C", "A", "B", "D", "R"], img: CarImg },
+    { word: "BOX", options: ["B", "O", "X", "C", "D"], img: BoxImg },
+    { word: "HAT", options: ["H", "C", "T", "A", "I"], img: HatImg },
+    { word: "BAG", options: ["B", "A", "G", "C", "D"], img: BagImg },
+    { word: "FOX", options: ["F", "J", "X", "O", "H"], img: FoxImg },
+    { word: "JAR", options: ["J", "A", "R", "K", "L"], img: JarImg },
+    { word: "PEN", options: ["P", "E", "N", "C", "D"], img: PenImg },
   ];
+
+  const correctSound = new Audio(CorrectSound);
+  const wrongSound = new Audio(WrongSound);
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [builtWord, setBuiltWord] = useState("");

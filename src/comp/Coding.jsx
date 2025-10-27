@@ -3,6 +3,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Coding.css";
 
+import hitSound from "/src/assets/sounds/no.mp3";
+import moveSound from "/src/assets/sounds/move.mp3";
+
 export default function Coding() {
   const GRID_SIZE = 8;
   const CELL_SIZE = 50;
@@ -32,50 +35,42 @@ export default function Coding() {
     setObstacles(newObstacles);
   }, []);
 
+  const playSound = (sound) => {
+    const audio = new Audio(sound);
+    audio.play();
+  };
+
   const showToast = (msg, type = "info") => {
-  if (msg === lastMessage) return;
-  setLastMessage(msg);
+    if (msg === lastMessage) return;
+    setLastMessage(msg);
 
-  if (type === "success") {
-    toast.success(msg, {
-      className: "white-toast",
-      style: {
-        backgroundColor: "white",
-        color: "black",
-        fontWeight: "bold",
-      },
-      iconTheme: { primary: "green", secondary: "white" },
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: true,
-    });
-  } else if (type === "error") {
-    toast.error(msg, {
-      style: {
-        backgroundColor: "red",
-        color: "white",
-        fontWeight: "bold",
-      },
-      iconTheme: { primary: "white", secondary: "red" },
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: true,
-    });
-  } else {
-    toast.warn(msg, {
-      style: {
-        backgroundColor: "white",
-        color: "black",
-        fontWeight: "bold",
-      },
-      iconTheme: { primary: "goldenrod", secondary: "white" },
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: true,
-    });
-  }
-};
-
+    if (type === "success") {
+      toast.success(msg, {
+        className: "white-toast",
+        style: { backgroundColor: "white", color: "black", fontWeight: "bold" },
+        iconTheme: { primary: "green", secondary: "white" },
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: true,
+      });
+    } else if (type === "error") {
+      toast.error(msg, {
+        style: { backgroundColor: "red", color: "white", fontWeight: "bold" },
+        iconTheme: { primary: "white", secondary: "red" },
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: true,
+      });
+    } else {
+      toast.warn(msg, {
+        style: { backgroundColor: "white", color: "black", fontWeight: "bold" },
+        iconTheme: { primary: "goldenrod", secondary: "white" },
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: true,
+      });
+    }
+  };
 
   const checkObstacle = (nx, ny) =>
     obstacles.some(
@@ -96,16 +91,18 @@ export default function Coding() {
 
     if (checkObstacle(newX, newY)) {
       showToast("Oops! You hit a stone!", "error");
+      playSound(hitSound);
       return;
     }
 
     setX(newX);
     setY(newY);
+    playSound(moveSound);
 
     if (newX === end.x && newY === end.y) {
-      showToast(" You reached the goal!", "success");
+      showToast("You reached the goal!", "success");
     } else {
-      showToast(" Good move!", "success");
+      showToast("Good move!", "success");
     }
   };
 
@@ -125,12 +122,14 @@ export default function Coding() {
     <div className="turtle-container">
       <ToastContainer position="top-center" autoClose={1000} hideProgressBar />
       <div className="heading-row">
-  <h2 className="game-title">Turtle Maze Game</h2>
-  <button className="reset-btn-t" onClick={resetTurtle}>
-    🔄 Restart
-  </button>
-</div>
-<p className="game-title-p">Use Arrow keys to reach the goal without hitting stones!</p>
+        <h2 className="game-title">Turtle Maze Game</h2>
+        <button className="reset-btn-t" onClick={resetTurtle}>
+          🔄 Restart
+        </button>
+      </div>
+      <p className="game-title-p">
+        Use Arrow keys to reach the goal without hitting stones!
+      </p>
 
       <div className="play-area">
         <div className="start">Start</div>

@@ -20,7 +20,7 @@
 }
 
 /* ---------- Grid Container ---------- */
-.container7 {
+.container-ex {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -32,7 +32,7 @@
 }
 
 /* ---------- Experiment Cards ---------- */
-.card7 {
+.card-ex{
   background: var(--card);
   box-shadow: 0 4px 12px var(--shadow);
   border-radius: var(--radius);
@@ -43,25 +43,25 @@
   text-align: center;
 }
 
-.card7 img {
+.card-ex img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
-.card7 h3 {
+.card-ex h3 {
   margin: 10px 0;
   color: var(--text);
   font-weight: 500;
 }
 
-.card7:hover {
+.card-ex:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* ---------- Modal ---------- */
-.exp-modal-overlay {
+.exp-modal-overlay-ex {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -72,7 +72,7 @@
   animation: fadeIn 0.3s ease;
 }
 
-.exp-modal-content {
+.exp-modal-content-ex {
   background: #fff;
   border-radius: var(--radius);
   width: 90%;
@@ -84,7 +84,7 @@
   padding: 20px;
 }
 
-.close-modal-btn {
+.close-modal-btn-ex {
   position: absolute;
   top: 12px;
   right: 14px;
@@ -97,38 +97,38 @@
 }
 
 /* ---------- Modal Layout ---------- */
-.modal1-body {
+.modal1-body-ex {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.modal1-header {
+.modal1-header-ex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.modal1-header h2 {
+.modal1-header-ex h2 {
   color: var(--nav-dark);
   font-size: 26px;
   margin: 0;
 }
 
-.modal1-content p {
+.modal1-content-ex p {
   line-height: 1.6;
   color: var(--text);
 }
 
 /* ---------- Video Section ---------- */
-.modal1-video {
+.modal1-video-ex {
   width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
 }
 
-.video-frame {
+.video-frame-ex {
   position: relative;
   width: 100%;
   max-width: 600px;
@@ -139,7 +139,7 @@
   transition: transform 0.3s;
 }
 
-.video-frame iframe {
+.video-frame-ex iframe {
   width: 100%;
   height: 100%;
   border: none;
@@ -200,13 +200,13 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-  .card7 {
+  .card-ex {
     width: 90%;
   }
-  .modal1-header h2 {
+  .modal1-header-ex h2 {
     font-size: 22px;
   }
-  .exp-modal-content {
+  .exp-modal-content-ex {
     width: 95%;
     padding: 15px;
   }

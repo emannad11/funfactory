@@ -1,19 +1,29 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import RecycleImg from "/src/assets/bottlee.jpg";
+import PeelImg from "/src/assets/peel.avif";
+import PaperImg from "/src/assets/paper3.webp";
+import JarImg from "/src/assets/jarr.jpg";
+import ScrapsImg from "/src/assets/scraps.jpg";
+import ShirtImg from "/src/assets/old.avif";
+import NewspaperImg from "/src/assets/newspaper.jpg";
+import AppleCoreImg from "/src/assets/apple-core.jpg";
+import BrokenToyImg from "/src/assets/brokentoy.webp";
+import CardboardImg from "/src/assets/cardboard.jpg";
 import "./DragDrop.css";
 
 const recycleItems = [
-  { name: "Plastic Bottle", bin: "Recycle", img: "/src/assets/bottlee.jpg" },
-  { name: "Banana Peel", bin: "Compost", img: "/src/assets/peel.avif" },
-  { name: "Paper", bin: "Recycle", img: "/src/assets/paper3.webp" },
-  { name: "Glass Jar", bin: "Recycle", img: "/src/assets/jarr.jpg" },
-  { name: "Food Scraps", bin: "Compost", img: "/src/assets/scraps.jpg" },
-  { name: "Old Shirt", bin: "Reuse", img: "/src/assets/old.avif" },
-  { name: "Newspaper", bin: "Recycle", img: "/src/assets/newspaper.jpg" },
-  { name: "Apple Core", bin: "Compost", img: "/src/assets/apple-core.jpg" },
-  { name: "Broken Toy", bin: "Reuse", img: "/src/assets/brokentoy.webp" },
-  { name: "Cardboard Box", bin: "Recycle", img: "/src/assets/cardboard.jpg" },
+  { name: "Plastic Bottle", bin: "Recycle", img: RecycleImg },
+  { name: "Banana Peel", bin: "Compost", img: PeelImg },
+  { name: "Paper", bin: "Recycle", img: PaperImg },
+  { name: "Glass Jar", bin: "Recycle", img: JarImg },
+  { name: "Food Scraps", bin: "Compost", img: ScrapsImg },
+  { name: "Old Shirt", bin: "Reuse", img: ShirtImg },
+  { name: "Newspaper", bin: "Recycle", img: NewspaperImg },
+  { name: "Apple Core", bin: "Compost", img: AppleCoreImg },
+  { name: "Broken Toy", bin: "Reuse", img: BrokenToyImg },
+  { name: "Cardboard Box", bin: "Recycle", img: CardboardImg },
 ];
 
 export default function Recycle() {
@@ -106,7 +116,7 @@ export default function Recycle() {
         <h2 className="drag-title1">♻️ Recycle Sorting Game</h2>
         <button className="restart-btn-l" onClick={handleRestart}>🔁 Restart</button>
       </div>
-      <p className="instructions">
+      <p className="instructions1">
         Drag or tap each item into the correct bin: ♻️ <b>Recycle</b>, 🔄 <b>Reuse</b>, 🌱 <b>Compost</b>
       </p>
       <div className="items-container-row">

@@ -80,6 +80,7 @@ body {
 }
 .card1 h3 {
   margin: 10px 0;
+  color: var(--nav-dark);
 }
 
 .modal-overlay {
@@ -132,6 +133,7 @@ body {
   justify-content: center;
   gap: 12px;
   margin-bottom: 20px;
+  color: var(--nav-dark);
 }
 
 .modal-header1 h2 {

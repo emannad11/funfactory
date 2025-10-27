@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./MatchingCards.css";
+import correctSoundFile from "/src/assets/sounds/correct.mp3";
+import wrongSoundFile from "/src/assets/sounds/no.mp3";
 
 const cardsArray = [
   { id: 1, emoji: "🍎" },
@@ -20,6 +22,9 @@ export default function MatchingCards() {
   const [matched, setMatched] = useState([]);
   const [score, setScore] = useState(0);
 
+  const correctSound = new Audio(correctSoundFile);
+  const wrongSound = new Audio(wrongSoundFile);
+
   const shuffleCards = () => {
     return [...cardsArray, ...cardsArray]
       .sort(() => Math.random() - 0.5)
@@ -32,6 +37,7 @@ export default function MatchingCards() {
 
   useEffect(() => {
     if (matched.length === cards.length && cards.length > 0) {
+      correctSound.play();
       toast.success(`You Won! Score: ${score}`, {
         position: "top-right",
         autoClose: 2000,
@@ -56,6 +62,7 @@ export default function MatchingCards() {
       const secondCard = cards.find((c) => c.uniqueId === newSelected[1]);
 
       if (firstCard.id === secondCard.id) {
+        correctSound.play();
         setMatched([...matched, firstCard.uniqueId, secondCard.uniqueId]);
         setScore((prev) => prev + 1);
         toast.success("Matched!", {
@@ -65,6 +72,7 @@ export default function MatchingCards() {
         });
         setTimeout(() => setSelected([]), 500);
       } else {
+        wrongSound.play();
         toast.error("Try Again!", {
           position: "top-right",
           autoClose: 800,
@@ -84,11 +92,9 @@ export default function MatchingCards() {
 
   return (
     <div className="game-container">
-     <div className="heading-row">
-  <h2>Matching Cards</h2>
-  <button className="restart-btn" onClick={handleRestart}>🔄 Restart</button>
-
-
+      <div className="heading-row">
+        <h2>Matching Cards</h2>
+        <button className="restart-btn" onClick={handleRestart}>🔄 Restart</button>
       </div>
 
       <p className="game-intro">

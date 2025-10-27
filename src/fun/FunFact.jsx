@@ -1,12 +1,21 @@
 import { useState } from "react";
 import "./Funfact.css";
-import SB2 from "./SB2"
+import SB2 from "./SB2";
+
+import h11 from "/src/assets/h11.png";
+import h12 from "/src/assets/h12.webp";
+import h13 from "/src/assets/h13.jpg";
+import h14 from "/src/assets/h14.jpg";
+import h15 from "/src/assets/h15.jpg";
+import h16 from "/src/assets/h16.jpg";
+import h17 from "/src/assets/h17.webp";
+
 export default function FunFact() {
   const subjects = [
     {
       id: 1,
       title: "Be Proactive",
-      img: "/src/assets/h11.png",
+      img: h11,
       questions: [
         {
           question: (
@@ -22,7 +31,7 @@ export default function FunFact() {
     {
       id: 2,
       title: "Begin with the End in Mind",
-      img: "/src/assets/h12.webp",
+      img: h12,
       questions: [
         {
           question: (
@@ -38,7 +47,7 @@ export default function FunFact() {
     {
       id: 3,
       title: "Put First Things First",
-      img: "/src/assets/h13.jpg",
+      img: h13,
       questions: [
         {
           question: (
@@ -54,7 +63,7 @@ export default function FunFact() {
     {
       id: 4,
       title: "Think Win-Win",
-      img: "/src/assets/h14.jpg",
+      img: h14,
       questions: [
         {
           question: (
@@ -70,7 +79,7 @@ export default function FunFact() {
     {
       id: 5,
       title: "Seek First to Understand",
-      img: "/src/assets/h15.jpg",
+      img: h15,
       questions: [
         {
           question: (
@@ -86,7 +95,7 @@ export default function FunFact() {
     {
       id: 6,
       title: "Synergize",
-      img: "/src/assets/h16.jpg",
+      img: h16,
       questions: [
         {
           question: (
@@ -102,7 +111,7 @@ export default function FunFact() {
     {
       id: 7,
       title: "Sharpen the Saw",
-      img: "/src/assets/h17.webp",
+      img: h17,
       questions: [
         {
           question: (
@@ -120,11 +129,13 @@ export default function FunFact() {
   const [selectedSubject, setSelectedSubject] = useState(null);
 
   const openModal = (subject) => setSelectedSubject(subject);
+
   const closeModal = () => {
     window.speechSynthesis.cancel();
     setSelectedSubject(null);
   };
 
+  // Helper to extract plain text from JSX for speech
   const getTextFromJSX = (jsx) => {
     if (typeof jsx === "string") return jsx;
     if (Array.isArray(jsx)) return jsx.map(getTextFromJSX).join(" ");

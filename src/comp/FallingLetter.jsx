@@ -11,7 +11,7 @@ export default function FallingLetter() {
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(5);
   const [gameOver, setGameOver] = useState(false);
-  const [gameStarted, setGameStarted] = useState(false); 
+  const [gameStarted, setGameStarted] = useState(false);
 
   const toastShown = useRef(false);
   const livesRef = useRef(lives);
@@ -28,7 +28,6 @@ export default function FallingLetter() {
   useEffect(() => {
     livesRef.current = lives;
   }, [lives]);
-
 
   useEffect(() => {
     if (!gameStarted || livesRef.current <= 0 || gameOver) return;

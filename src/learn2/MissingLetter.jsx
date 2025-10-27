@@ -3,18 +3,29 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Missingletter.css";
 
+import catImg from "../assets/cat.jpg";
+import ballImg from "../assets/ba.jpg";
+import birdImg from "../assets/birds1.webp";
+import fishImg from "../assets/fishwater.jpg";
+import treeImg from "../assets/tree-cool.webp";
+import sunImg from "../assets/sunn.png";
+import lionImg from "../assets/lion.jpg";
+import duckImg from "../assets/duck4.jpg";
+import frogImg from "../assets/frog.jpg";
+import shipImg from "../assets/boat.jpg";
+
 export default function MissingLetter() {
   const data = [
-    { word: "CAT", missing: 1, image: "/src/assets/cat.jpg" },
-    { word: "BALL", missing: 2, image: "/src/assets/ba.jpg" },
-    { word: "BIRD", missing: 1, image: "/src/assets/birds1.webp" },
-    { word: "FISH", missing: 2, image: "/src/assets/fishwater.jpg" },
-    { word: "TREE", missing: 3, image: "/src/assets/tree-cool.webp" },
-    { word: "SUN", missing: 1, image: "/src/assets/sunn.png" },
-    { word: "LION", missing: 2, image: "/src/assets/lion.jpg" },
-    { word: "DUCK", missing: 3, image: "/src/assets/duck4.jpg" },
-    { word: "FROG", missing: 2, image: "/src/assets/frog.jpg" },
-    { word: "SHIP", missing: 1, image: "/src/assets/boat.jpg" },
+    { word: "CAT", missing: 1, image: catImg },
+    { word: "BALL", missing: 2, image: ballImg },
+    { word: "BIRD", missing: 1, image: birdImg },
+    { word: "FISH", missing: 2, image: fishImg },
+    { word: "TREE", missing: 3, image: treeImg },
+    { word: "SUN", missing: 1, image: sunImg },
+    { word: "LION", missing: 2, image: lionImg },
+    { word: "DUCK", missing: 3, image: duckImg },
+    { word: "FROG", missing: 2, image: frogImg },
+    { word: "SHIP", missing: 1, image: shipImg },
   ];
 
   const [index, setIndex] = useState(0);
@@ -67,7 +78,6 @@ export default function MissingLetter() {
 
   return (
     <div className="missing-letter-container">
-
       <div className="header-roww">
         <h2>Find the Missing Letter!</h2>
         <button className="restart-btn-m" onClick={handleRestart}>

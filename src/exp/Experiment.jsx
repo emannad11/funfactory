@@ -2,12 +2,23 @@ import { useState } from "react";
 import "./Experiment.css";
 import SoundButton2 from "./SoundButton2";
 
+import floatingImg from "../assets/floating.jpg";
+import dryImg from "../assets/dry.jpg";
+import waterImg from "../assets/water.jpg";
+import volcanoImg from "../assets/volcano.jpg";
+import sandImg from "../assets/sand.jpg";
+import chocImg from "../assets/choc.jpg";
+import ballonImg from "../assets/ballon.jpg";
+import saltImg from "../assets/salt.jpeg";
+import rainbowImg from "../assets/rainbow1.jpg";
+import lemonImg from "../assets/lemon.jpg";
+
 export default function Experiment() {
   const experiments = [
     {
       id: 1,
       title: "Floating Egg",
-      img: "/src/assets/floating.jpg",
+      img: floatingImg,
       videoUrl: "https://www.youtube.com/embed/iMyW2nbpmmQ",
       content: (
         <>
@@ -36,7 +47,7 @@ export default function Experiment() {
     {
       id: 2,
       title: "Dry Ice Bubble",
-      img: "/src/assets/dry.jpg",
+      img: dryImg,
       videoUrl: "https://www.youtube.com/embed/hSizkoEFImc",
       content: (
         <>
@@ -66,7 +77,7 @@ export default function Experiment() {
     {
       id: 3,
       title: "Oil and Water",
-      img: "/src/assets/water.jpg",
+      img: waterImg,
       videoUrl: "https://www.youtube.com/embed/sV0SxwaVKN8",
       content: (
         <>
@@ -97,7 +108,7 @@ export default function Experiment() {
     {
       id: 4,
       title: "Vinegar Volcano",
-      img: "/src/assets/volcano.jpg",
+      img: volcanoImg,
       videoUrl: "https://www.youtube.com/embed/dIvXnqQaSwM",
       content: (
         <>
@@ -126,7 +137,7 @@ export default function Experiment() {
     {
       id: 5,
       title: "Quick Sand",
-      img: "/src/assets/sand.jpg",
+      img: sandImg,
       videoUrl: "https://www.youtube.com/embed/PLKN3X5JgbM",
       content: (
         <>
@@ -156,7 +167,7 @@ export default function Experiment() {
     {
       id: 6,
       title: "Melting Chocolate",
-      img: "/src/assets/choc.jpg",
+      img: chocImg,
       videoUrl: "https://www.youtube.com/embed/xo1dVkwjpH8",
       content: (
         <>
@@ -184,7 +195,7 @@ export default function Experiment() {
     {
       id: 7,
       title: "Blowing Up Balloons",
-      img: "/src/assets/ballon.jpg",
+      img: ballonImg,
       videoUrl: "https://www.youtube.com/embed/JK5-2X_GqP8",
       content: (
         <>
@@ -214,7 +225,7 @@ export default function Experiment() {
     {
       id: 8,
       title: "Lung Capacity",
-      img: "/src/assets/salt.jpeg",
+      img: saltImg,
       videoUrl: "https://www.youtube.com/embed/UlhJwogS6l0",
       content: (
         <>
@@ -241,7 +252,7 @@ export default function Experiment() {
     {
       id: 9,
       title: "Creating Rainbow",
-      img: "/src/assets/rainbow1.jpg",
+      img: rainbowImg,
       videoUrl: "https://www.youtube.com/embed/lma6xLE4tPI",
       content: (
         <>
@@ -269,7 +280,7 @@ export default function Experiment() {
     {
       id: 10,
       title: "Invisible Ink",
-      img: "/src/assets/lemon.jpg",
+      img: lemonImg,
       videoUrl: "https://www.youtube.com/embed/poCnU_crpjQ?si",
       content: (
         <>
@@ -299,8 +310,8 @@ export default function Experiment() {
       text: `Invisible Ink with Lemon Juice. You'll need: lemon juice, water, spoon, cotton bud, paper, and a lamp. Instructions: Mix lemon juice and water. Write with a cotton bud. Let dry. Heat under a lamp to reveal the message. What's happening: The lemon juice oxidizes and turns brown when heated, exposing your writing!`,
     },
   ];
- 
- const [selectedExp, setSelectedExp] = useState(null);
+
+  const [selectedExp, setSelectedExp] = useState(null);
 
   const openModal = (exp) => {
     window.speechSynthesis.cancel();
@@ -316,7 +327,7 @@ export default function Experiment() {
     setSelectedExp(null);
   };
 
-  // ✅ Handle click/touch to play video (without autoplay initially)
+  // Handle click/touch to play video
   const handleTouchPlay = (e) => {
     e.stopPropagation();
     const frameContainer = e.currentTarget.closest(".video-frame");
@@ -354,23 +365,22 @@ export default function Experiment() {
                 {selectedExp.content}
               </div>
 
-            <div className="modal1-video">
-  <div className="video-frame">
-    <iframe
-      src={`${selectedExp.videoUrl}?enablejsapi=1`}
-      title={selectedExp.title}
-      frameBorder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
-
-    <div
-      className="video-touch-layer"
-      onClick={handleTouchPlay}
-      onTouchStart={handleTouchPlay}
-    ></div>
-  </div>
-</div>
+              <div className="modal1-video">
+                <div className="video-frame">
+                  <iframe
+                    src={`${selectedExp.videoUrl}?enablejsapi=1`}
+                    title={selectedExp.title}
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                  <div
+                    className="video-touch-layer"
+                    onClick={handleTouchPlay}
+                    onTouchStart={handleTouchPlay}
+                  ></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

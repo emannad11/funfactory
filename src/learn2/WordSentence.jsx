@@ -1,18 +1,30 @@
 import { useState } from "react";
 import "./WordSentence.css";
 
+// ✅ Import all images
+import CatImg from "../assets/Cat3.jpg";
+import DogImg from "../assets/Dog2.jpg";
+import BallImg from "../assets/redball.webp";
+import SunImg from "../assets/sunn.png";
+import AppleImg from "../assets/Apple.jpeg";
+import FishImg from "../assets/fish.jpg";
+import BirdImg from "../assets/birds1.webp";
+import LionImg from "../assets/lion.jpg";
+import TreeImg from "../assets/treee.jpg";
+import CarImg from "../assets/carr.jpg";
+
 export default function WordSentence() {
   const sentencesData = [
-    { word: "Cat", sentence: "The cat is sleeping.", img: "/src/assets/Cat3.jpg" },
-    { word: "Dog", sentence: "The dog runs fast.", img: "/src/assets/Dog2.jpg" },
-    { word: "Ball", sentence: "I have a red ball.", img: "/src/assets/redball.webp" },
-    { word: "Sun", sentence: "The sun is shining.", img: "/src/assets/sunn.png" },
-    { word: "Apple", sentence: "An apple is red.", img: "/src/assets/Apple.jpeg" },
-    { word: "Fish", sentence: "The fish swims in water.", img: "/src/assets/fish.jpg" },
-    { word: "Bird", sentence: "The bird can fly.", img: "/src/assets/birds1.webp" },
-    { word: "Lion", sentence: "The lion is the king of the jungle.", img: "/src/assets/lion.jpg" },
-    { word: "Tree", sentence: "A tree gives us shade.", img: "/src/assets/treee.jpg" },
-    { word: "Car", sentence: "The car is very fast.", img: "/src/assets/carr.jpg" },
+    { word: "Cat", sentence: "The cat is sleeping.", img: CatImg },
+    { word: "Dog", sentence: "The dog runs fast.", img: DogImg },
+    { word: "Ball", sentence: "I have a red ball.", img: BallImg },
+    { word: "Sun", sentence: "The sun is shining.", img: SunImg },
+    { word: "Apple", sentence: "An apple is red.", img: AppleImg },
+    { word: "Fish", sentence: "The fish swims in water.", img: FishImg },
+    { word: "Bird", sentence: "The bird can fly.", img: BirdImg },
+    { word: "Lion", sentence: "The lion is the king of the jungle.", img: LionImg },
+    { word: "Tree", sentence: "A tree gives us shade.", img: TreeImg },
+    { word: "Car", sentence: "The car is very fast.", img: CarImg },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,7 +68,7 @@ export default function WordSentence() {
                 setCurrentIndex((prev) => (prev + 1) % sentencesData.length)
               }
             >
-              Next →
+              Next → 
             </button>
           </div>
         </div>

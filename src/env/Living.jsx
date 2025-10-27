@@ -1,19 +1,29 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import DogImg from "/src/assets/Dog1.webp";
+import CatImg from "/src/assets/Cat4.webp";
+import TreeImg from "/src/assets/treee.jpg";
+import BirdImg from "/src/assets/eagle.jpg";
+import FishImg from "/src/assets/real.webp";
+import RockImg from "/src/assets/rockk.jpg";
+import ChairImg from "/src/assets/chair.webp";
+import BottleImg from "/src/assets/bottlee.jpg";
+import BookImg from "/src/assets/book.webp";
+import PenImg from "/src/assets/penn.jpg";
 import "./DragDrop.css";
 
 const initialItems = [
-  { name: "Dog", type: "living", img: "/src/assets/Dog1.webp" },
-  { name: "Cat", type: "living", img: "/src/assets/Cat4.webp" },
-  { name: "Tree", type: "living", img: "/src/assets/treee.jpg" },
-  { name: "Bird", type: "living", img: "/src/assets/eagle.jpg" },
-  { name: "Fish", type: "living", img: "/src/assets/real.webp" },
-  { name: "Rock", type: "non-living", img: "/src/assets/rockk.jpg" },
-  { name: "Chair", type: "non-living", img: "/src/assets/chair.webp" },
-  { name: "Bottle", type: "non-living", img: "/src/assets/bottlee.jpg" },
-  { name: "Book", type: "non-living", img: "/src/assets/book.webp" },
-  { name: "Pen", type: "non-living", img: "/src/assets/penn.jpg" },
+  { name: "Dog", type: "living", img: DogImg },
+  { name: "Cat", type: "living", img: CatImg },
+  { name: "Tree", type: "living", img: TreeImg },
+  { name: "Bird", type: "living", img: BirdImg },
+  { name: "Fish", type: "living", img: FishImg },
+  { name: "Rock", type: "non-living", img: RockImg },
+  { name: "Chair", type: "non-living", img: ChairImg },
+  { name: "Bottle", type: "non-living", img: BottleImg },
+  { name: "Book", type: "non-living", img: BookImg },
+  { name: "Pen", type: "non-living", img: PenImg },
 ];
 
 export default function Living() {
@@ -120,10 +130,11 @@ export default function Living() {
         <h2 className="drag-title1">Living vs Non-Living</h2>
         <button className="restart-btn-l" onClick={handleRestart}>🔁 Restart</button>
       </div>
-      <p className="instructions">
+      <p className="instructions1">
         Drag and drop each picture into the correct box. Living things can grow,
         move, and breathe — non-living things cannot.
       </p>
+
       <div className="items-container-row">
         {items.map((item) => (
           <div

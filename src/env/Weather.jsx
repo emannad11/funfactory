@@ -1,19 +1,29 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import UmbrellaImg from "/src/assets/umb.avif";
+import RaincoatImg from "/src/assets/coat.jpeg";
+import BootsImg from "/src/assets/boots.jpg";
+import PuddleImg from "/src/assets/puddle.jpeg";
+import BoatImg from "/src/assets/boat.jpg";
+import GlassesImg from "/src/assets/sunglasses.jpg";
+import ShortsImg from "/src/assets/shorts.jpeg";
+import HatImg from "/src/assets/hat.jpg";
+import JuiceImg from "/src/assets/ice.jpg";
+import SunscreenImg from "/src/assets/sunscreen.jpg";
 import "./DragDrop.css";
 
 const weatherItems = [
-  { name: "Umbrella", type: "Rainy", img: "/src/assets/umb.avif" },
-  { name: "Raincoat", type: "Rainy", img: "/src/assets/coat.jpeg" },
-  { name: "Boots", type: "Rainy", img: "/src/assets/boots.jpg" },
-  { name: "Puddle", type: "Rainy", img: "/src/assets/puddle.jpeg" },
-  { name: "Boat", type: "Rainy", img: "/src/assets/boat.jpg" },
-  { name: "Glasses", type: "Sunny", img: "/src/assets/sunglasses.jpg" },
-  { name: "Shorts", type: "Sunny", img: "/src/assets/shorts.jpeg" },
-  { name: "Hat", type: "Sunny", img: "/src/assets/hat.jpg" },
-  { name: "Juice", type: "Sunny", img: "/src/assets/ice.jpg" },
-  { name: "Sunscreen", type: "Sunny", img: "/src/assets/sunscreen.jpg" },
+  { name: "Umbrella", type: "Rainy", img: UmbrellaImg },
+  { name: "Raincoat", type: "Rainy", img: RaincoatImg },
+  { name: "Boots", type: "Rainy", img: BootsImg },
+  { name: "Puddle", type: "Rainy", img: PuddleImg },
+  { name: "Boat", type: "Rainy", img: BoatImg },
+  { name: "Glasses", type: "Sunny", img: GlassesImg },
+  { name: "Shorts", type: "Sunny", img: ShortsImg },
+  { name: "Hat", type: "Sunny", img: HatImg },
+  { name: "Juice", type: "Sunny", img: JuiceImg },
+  { name: "Sunscreen", type: "Sunny", img: SunscreenImg },
 ];
 
 export default function Weather() {
@@ -118,7 +128,7 @@ export default function Weather() {
         <h2 className="drag-title1">🌦️ Weather Match Game</h2>
         <button className="restart-btn-l" onClick={handleRestart}>🔁 Restart</button>
       </div>
-      <p className="instructions">
+      <p className="instructions1">
         Drag or tap each item into the correct weather bin — ☀️ <b>Sunny</b> for hot days, 🌧️ <b>Rainy</b> for wet days.
       </p>
 
